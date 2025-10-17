@@ -62,6 +62,25 @@ void	Fixed::setRawBits( int const raw )
 	this->raw = raw;
 }
 
+Fixed Fixed::operator+(Fixed& o)
+{
+}
+
+Fixed Fixed::operator-(Fixed& o)
+{
+}
+
+Fixed Fixed::operator*(Fixed& o)
+{
+	return (this.getRawBits * o.getRawBits()) >> this->fp_i;
+}
+
+Fixed Fixed::operator/(Fixed& o)
+{
+	return this.getRawBits / o.getRawBits();
+}
+
+
 inline bool operator==(const Fixed& l, const Fixed& r)
 {
 	return (l.getRawBits() == r.getRawBits());
@@ -94,12 +113,22 @@ inline bool operator>=(const Fixed& l, const Fixed& r)
 	return !(l.getRawBits() < r.getRawBits());
 }
 
-Fixed&	Fixed::min(const Fixed& l, const Fixed& r)
+Fixed&	Fixed::min(Fixed& l, Fixed& r)
 {
 	return (l < r ? l : r);
 }
 
-Fixed&	Fixed::max(const Fixed& l, const  Fixed&r)
+Fixed&	Fixed::max(Fixed& l,  Fixed&r)
+{
+	return (l > r ? l : r);
+}
+
+Fixed&	Fixed::min(const Fixed& l, const Fixed& r) const
+{
+	return (l < r ? l : r);
+}
+
+Fixed&	Fixed::max(const Fixed& l, const  Fixed&r) const
 {
 	return (l > r ? l : r);
 }
