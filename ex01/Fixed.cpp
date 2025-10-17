@@ -7,7 +7,7 @@ Fixed::Fixed()
 	this->raw = 0;
 }
 
-Fixed::Fixed(Fixed& f)
+Fixed::Fixed(const Fixed& f)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = f;
@@ -20,11 +20,36 @@ Fixed& Fixed::operator=(const Fixed& f)
 	return (*this);
 }
 
+std::ostream& operator<<(std::ostream& os, const Fixed &f)
+{
+	os << f.toFloat();
+	return (os);
+}
+
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
+Fixed::Fixed(int i)
+{
+	this->raw = i << this->fp_i;
+}
+
+Fixed::Fixed(float f)
+{
+	this->raw = f * (1 << this->fp_i);
+}
+
+int Fixed::toInt() const 
+{
+	return (this->raw >> this->fp_i);
+}
+
+float Fixed::toFloat() const
+{
+	return (this->raw >> this->fp_i);
+}
 
 int		Fixed::getRawBits( void ) const
 {
