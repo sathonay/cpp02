@@ -4,11 +4,9 @@
 class Fixed {
 	private:
 		int raw;
-		static const int fp_i = 8;
+		static const int fp_i;
 	public:
 		Fixed();
-		Fixed(const int i);
-		Fixed(const float f);
 		Fixed(Fixed& f);
 		Fixed& operator=(const Fixed& f);
 		~Fixed();

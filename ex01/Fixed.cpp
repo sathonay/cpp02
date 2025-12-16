@@ -1,5 +1,8 @@
 #include <iostream>
+#include <math.h>
 #include "Fixed.hpp"
+
+const int Fixed::fp_i = 8;
 
 Fixed::Fixed()
 {
@@ -38,7 +41,7 @@ Fixed::Fixed(int i)
 
 Fixed::Fixed(float f)
 {
-	this->raw = f * (1 << this->fp_i);
+	this->raw = roundf(f * (1 << this->fp_i));
 }
 
 int Fixed::toInt() const 
@@ -48,7 +51,7 @@ int Fixed::toInt() const
 
 float Fixed::toFloat() const
 {
-	return (this->raw >> this->fp_i);
+	return ((float)this->raw / (1 << this->fp_i));
 }
 
 int		Fixed::getRawBits( void ) const

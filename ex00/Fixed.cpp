@@ -1,33 +1,12 @@
 #include <iostream>
 #include "Fixed.hpp"
 
+static const int fp_i = 8;
+
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->raw = 0;
-}
-
-Fixed::Fixed(const int i)
-{
-	this->raw = 0;
-	this->raw |= i << 8;
-}
-
-Fixed::Fixed(const float f) : Fixed((int) f)
-{
-	f -= (int) f;
-	int pow = 2;
-	for (int i = 0; i < 8; i++)
-	{
-		if (i != 0)
-			pow *= 2;
-		float frac = 1 / pow;
-		if (frac < f)
-		{
-			f -= frac;
-			this->raw |= 1 << 7 - i;
-		}
-	}
 }
 
 Fixed::Fixed(Fixed& f)
