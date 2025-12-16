@@ -5,7 +5,7 @@
 class Fixed {
 	private:
 		int raw;
-		static const int fp_i = 8;
+		static const int fp_i;
 	public:
 		Fixed();
 		Fixed(const Fixed& f);
