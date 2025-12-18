@@ -34,12 +34,12 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(int i)
+Fixed::Fixed(const int i)
 {
 	this->raw = i << this->fp_i;
 }
 
-Fixed::Fixed(float f)
+Fixed::Fixed(const float f)
 {
 	this->raw = roundf(f * (1 << this->fp_i));
 }

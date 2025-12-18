@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 #include "Fixed.hpp"
 
 const int Fixed::fp_i = 8;
@@ -33,12 +34,12 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(int i)
+Fixed::Fixed(const int i)
 {
 	this->raw = i << this->fp_i;
 }
 
-Fixed::Fixed(float f)
+Fixed::Fixed(const float f)
 {
 	this->raw = roundf(f * (1 << this->fp_i));
 }
@@ -74,12 +75,12 @@ Fixed Fixed::operator-(Fixed& o)
 
 Fixed Fixed::operator*(Fixed& o)
 {
-	return (this.getRawBits * o.getRawBits()) >> this->fp_i;
+	return (this->getRawBits() * o.getRawBits()) >> this->fp_i;
 }
 
 Fixed Fixed::operator/(Fixed& o)
 {
-	return this.getRawBits / o.getRawBits();
+	return this->getRawBits() / o.getRawBits();
 }
 
 
@@ -125,12 +126,12 @@ Fixed&	Fixed::max(Fixed& l,  Fixed&r)
 	return (l > r ? l : r);
 }
 
-Fixed&	Fixed::min(const Fixed& l, const Fixed& r) const
+const Fixed&	Fixed::min(const Fixed& l, const Fixed& r)
 {
 	return (l < r ? l : r);
 }
 
-Fixed&	Fixed::max(const Fixed& l, const  Fixed&r) const
+const Fixed&	Fixed::max(const Fixed& l, const  Fixed&r)
 {
 	return (l > r ? l : r);
 }

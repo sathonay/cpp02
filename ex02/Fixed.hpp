@@ -9,9 +9,9 @@ class Fixed {
 	public:
 		Fixed();
 		Fixed(const Fixed& f);
-		Fixed(int i);
-		Fixed(float f);
-
+		Fixed(const int i);
+		Fixed(const float f);
+		
 		float	toFloat(void) const;
 		int		toInt(void) const;
 
