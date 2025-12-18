@@ -17,19 +17,23 @@ class Fixed {
 
 		Fixed& operator=(const Fixed& l);
 
-		Fixed operator+(Fixed& o);
-		Fixed operator-(Fixed& o);
-		Fixed operator*(Fixed& o);
-		Fixed operator/(Fixed& o);
+		Fixed operator+(const Fixed& o);
+		Fixed operator-(const Fixed& o);
+		Fixed operator*(const Fixed& o);
+		Fixed operator/(const Fixed& o);
 
-		friend bool operator==(const Fixed& l, const Fixed& r);
-		friend bool operator!=(const Fixed& l, const Fixed& r);
+		Fixed& operator++();
+		Fixed& operator--();
+		Fixed operator++(int);
+		Fixed operator--(int);
 
-		friend bool operator<(const Fixed& l, const Fixed& r);
-		friend bool operator>(const Fixed& l, const Fixed& r);
+		bool operator==(const Fixed& o) const;
+		bool operator!=(const Fixed& o) const;
+		bool operator<(const Fixed& o) const;
+		bool operator>(const Fixed& o) const;
+		bool operator<=(const Fixed& o) const;
+		bool operator>=(const Fixed& o) const;
 
-		friend bool operator<=(const Fixed& l, const Fixed& r);
-		friend bool operator>=(const Fixed& l, const Fixed& r);
 		~Fixed();
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );

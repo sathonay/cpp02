@@ -37,11 +37,13 @@ Fixed::~Fixed()
 Fixed::Fixed(const int i)
 {
 	this->raw = i << this->fp_i;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float f)
 {
 	this->raw = roundf(f * (1 << this->fp_i));
+	std::cout << "Float constructor called" << std::endl;
 }
 
 int Fixed::toInt() const 
