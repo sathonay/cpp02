@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Fixed.hpp"
 
-static const int fp_i = 8;
-
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
