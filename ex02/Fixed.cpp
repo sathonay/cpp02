@@ -91,10 +91,10 @@ Fixed Fixed::operator*(const Fixed& o)
 	return ret;
 }
 
-Fixed Fixed::operator/(const Fixed& o)
+Fixed Fixed::operator/(const Fixed& o) const
 {
 	Fixed ret;
-	ret.setRawBits((this->getRawBits() / o.getRawBits()) >> fp_i);
+	ret.setRawBits((this->getRawBits() / o.getRawBits()) << fp_i);
 	return ret;
 }
 

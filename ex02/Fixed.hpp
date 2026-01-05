@@ -22,7 +22,7 @@ class Fixed {
 		Fixed operator+(const Fixed& o);
 		Fixed operator-(const Fixed& o);
 		Fixed operator*(const Fixed& o);
-		Fixed operator/(const Fixed& o);
+		Fixed operator/(const Fixed& o) const;
 
 		Fixed& operator++();
 		Fixed& operator--();
