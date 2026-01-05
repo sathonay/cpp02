@@ -74,17 +74,21 @@ void	Fixed::setRawBits( int const raw )
 	this->raw = raw;
 }
 
-Fixed Fixed::operator+(const Fixed& o)
+Fixed Fixed::operator+(const Fixed& o) const
 {
-	return Fixed(this->getRawBits() + o.getRawBits());
+	Fixed ret;
+	ret.setRawBits(this->getRawBits() + o.getRawBits());
+	return ret;
 }
 
-Fixed Fixed::operator-(const Fixed& o)
+Fixed Fixed::operator-(const Fixed& o) const
 {
-	return Fixed(this->getRawBits() - o.getRawBits());
+	Fixed ret;
+	ret.setRawBits(this->getRawBits() - o.getRawBits() );
+	return ret;
 }
 
-Fixed Fixed::operator*(const Fixed& o)
+Fixed Fixed::operator*(const Fixed& o) const
 {
 	Fixed ret;
 	ret.setRawBits((this->getRawBits() * o.getRawBits()) >> fp_i);

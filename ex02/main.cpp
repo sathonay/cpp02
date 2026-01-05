@@ -15,5 +15,15 @@ int main( void ) {
 	std::cout << Fixed(2) / Fixed(0.5f) << std::endl;
 	std::cout << Fixed(2) * Fixed(0.75f) << std::endl;
 	std::cout << Fixed(2) * Fixed(2) << std::endl;
+
+	std::cout << a << " | " << b<< std::endl;
+	std::cout << a * b << std::endl;
+	std::cout << b * a << std::endl;
+	std::cout << a / b << std::endl;
+	std::cout << b / a << std::endl;
+	std::cout << a + b << std::endl;
+	std::cout << b + a << std::endl;
+	std::cout << a - b << std::endl;
+	std::cout << b - a << std::endl;
 return 0;
 }
