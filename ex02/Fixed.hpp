@@ -2,6 +2,8 @@
 #ifndef FIXED_H
 #define FIXED_H
 
+#define PRINT 0
+
 class Fixed {
 	private:
 		int raw;
