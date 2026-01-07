@@ -11,7 +11,10 @@ class Point {
 		Point(float x, float y);
 		Point(const Point &p);
 		~Point();
-		Point& operator=(Point &p);
+		Point& operator=(const Point &p);
+
+		Point(Fixed x, Fixed y);
+		Point operator-(const Point& p) const;
 		Fixed getX() const;
 		Fixed getY() const;
 };

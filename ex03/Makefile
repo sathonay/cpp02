@@ -1,4 +1,4 @@
-SRC=main.cpp Fixed.cpp Point.cpp
+SRC=main.cpp Fixed.cpp Point.cpp bsp.cpp
 F_EXT = .cpp
 
 OBJ = $(SRC:$(F_EXT)=.o)
